@@ -549,7 +549,7 @@
     console.log('Pansley CRM:', data);
 
     // Envia para n8n webhook
-    fetch('https://swiftprawn-n8n.cloudfy.live/webhook-test/7124fc15-6d51-4235-994a-3cb66c929f25', {
+    fetch('https://swiftprawn-n8n.cloudfy.live/webhook/pansley/formulario', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data)
