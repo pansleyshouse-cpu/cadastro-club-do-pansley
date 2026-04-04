@@ -437,10 +437,9 @@
           </select>
         </div>
 
-        <label style="display:flex;align-items:flex-start;gap:10px;cursor:pointer;margin-bottom:16px;background:rgba(0,0,0,0.2);border-radius:10px;padding:12px 14px;">
-          <input type="checkbox" id="maior18" style="margin-top:3px;width:22px;height:22px;flex-shrink:0;accent-color:#f5a80f;cursor:pointer;">
-          <span style="font-size:12px;color:rgba(255,255,255,0.75);line-height:1.5;">Declaro que sou maior de 18 anos e estou ciente de que o benefício envolve bebida alcoólica.</span>
-        </label>
+        <p style="font-size:11px;color:rgba(255,255,255,0.55);text-align:center;line-height:1.7;margin-bottom:16px;padding:0 6px;">
+          Ao continuar com o cadastro, declaro ser <strong style="color:rgba(255,255,255,0.8);">maior de 18 anos</strong> e estou ciente de que o benefício envolve bebida alcoólica.
+        </p>
 
         <button type="submit" class="cta">
           Quero meu benefício!
@@ -466,7 +465,8 @@
       <div style="font-size:12px;color:rgba(255,255,255,0.6);line-height:1.6;">Em instantes você receberá seu código<br>exclusivo direto no WhatsApp.<br>Apresente ao garçom para ativar. 🍺</div>
     </div>
 
-    <p class="success-footer" style="margin-top:16px;">Válido por 7 dias.<br><strong style="color:var(--amber)">Saúde! 🍻</strong></p>
+    <p style="font-size:11px;color:rgba(201,0,70,0.85);font-weight:700;text-align:center;margin-top:12px;letter-spacing:0.03em;">🔞 Proibido para menores de 18 anos</p>
+    <p class="success-footer" style="margin-top:8px;">Válido por 7 dias.<br><strong style="color:var(--amber)">Saúde! 🍻</strong></p>
   </div>
 
 </div><!-- /page -->
@@ -524,15 +524,6 @@
       return;
     }
 
-    // Validação checkbox maior de idade
-    if (!document.getElementById('maior18').checked) {
-      const lbl = document.getElementById('maior18').closest('label');
-      lbl.style.outline = '2px solid #c90046';
-      lbl.style.outlineOffset = '4px';
-      setTimeout(() => { lbl.style.outline = 'none'; lbl.style.outlineOffset = '0'; }, 2000);
-      return;
-    }
-
     const temFilhos = document.getElementById('filhos').value;
     const faixaEtaria = temFilhos === 'sim' ? document.getElementById('faixa_etaria_filhos').value : 'nao_aplicavel';
 
@@ -548,7 +539,6 @@
       tem_filhos:          temFilhos,
       faixa_etaria_filhos: faixaEtaria,
       beneficio:           selectedBenefit,
-      maior18:             document.getElementById('maior18').checked,
       cadastrado_em:       new Date().toISOString()
     };
 
