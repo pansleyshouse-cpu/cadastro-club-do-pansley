@@ -456,7 +456,7 @@
     };
 
     // Gera código único PAN-XXXX
-    const codigo = 'PAN-' + Math.floor(1000 + Math.random() * 9000);
+    const codigo = 'PAN-' + Math.floor(100000 + Math.random() * 900000);
     const agora  = new Date();
     const hora   = agora.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
     const dataFmt= agora.toLocaleDateString('pt-BR');
